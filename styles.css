@@ -1,0 +1,257 @@
+body {
+    box-sizing: border-box;
+    background-image: url(goth/goth9.jpg);
+}
+
+body:before {
+    content:"";
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+    background: linear-gradient(to right, rgb(0, 30, 58) , rgb(122, 171, 228));
+    opacity: 0.7;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -374px;
+    margin-left: -250px;
+    max-width: 505px;
+    max-height: 748px;
+    /*border: 1px solid red;*/
+}
+
+.tictactoe {
+    width: 500px;
+    height: 60px;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'New Rocker';
+    color: rgb(0, 0, 0);
+    font-size: 2.60rem;
+    padding-left: 1px;
+    font-weight: bold;
+    text-shadow: 0px -2px 0px rgb(85, 134, 190), /* 50% white from top */
+                    0px 5px 10px rgb(0, 0, 0);
+}
+
+.toe {
+    font-family: 'New Rocker';
+    color: rgb(9, 11, 14);
+    font-size: 2.60rem;
+    font-weight: bold;
+    text-shadow: 0px -2px 0px rgb(132, 178, 229),/* 50% white from top */
+                     0px 5px 10px rgb(0, 15, 34);
+}
+                      
+
+.tac {
+    font-family: 'New Rocker';
+    color: rgb(9, 11, 14);
+    font-size: 2.60rem;
+    font-weight: bold;
+    text-shadow: 0px -2px 0px rgb(113, 159, 212), /* 50% white from top */
+                      0px 5px 10px rgb(0, 15, 34); 
+}
+
+.sword {
+    width: 25px;
+    padding-left: 12px;
+    padding-top: 2px;
+    cursor: pointer;
+}
+
+.player {
+    width: 480px;
+    height: 80px;
+    background-image: url(goth/bgtop.jpg);
+    border-bottom: 3px solid rgb(0, 0, 0);
+    border-left: 3px solid rgb(0, 0, 0);
+    border-top: 2px solid rgb(74, 115, 161);
+    border-right: 2px solid rgb(116, 163, 216);
+    box-shadow: 0px 0px 18px rgb(0, 0, 0);
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding-left: 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.refresh {
+    font-family: 'New Rocker';
+    font-size: 1rem;
+    color:  rgb(166, 213, 255);
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    text-shadow: 0px 2px 2px rgb(0, 0, 0);
+    padding-top: 8px;
+    padding-right: 20px;
+}
+
+.currentPlayer {
+    font-family: 'New Rocker';
+    font-size: 1rem;
+    color:  rgb(141, 194, 240);
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    text-shadow: 0px 5px 10px rgb(0, 0, 0);
+}
+
+.play {
+    padding-left: 12px;
+    padding-top: 5px;
+}
+
+.container {
+    background-image: url(goth/bgmiddle2.jpg);
+    width: 460px;
+    height: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;                       /* remove space between cell border rows */
+    border-top: 2px solid rgb(74, 115, 161);
+    border-right: 2px solid rgb(116, 163, 216);
+    border-left: 3px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(0, 0, 0);
+    box-shadow: 0px 0px 28px rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.a2, .b2, .c2, .a3, .b3, .c3 {
+    padding-left: 5px;
+} 
+
+.box {
+    position: relative;
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 5px;
+}   
+
+
+.box.x,
+.box.o {
+    cursor: not-allowed;
+}
+
+
+
+.x::before {
+    content: url(goth/skull.png);
+    width: 85px;
+    height: auto;
+    padding-left: 20px;
+    -webkit-filter: drop-shadow(0px 5px 5px rgb(0, 0, 0));
+    filter: drop-shadow(0px 8px 10px rgb(0, 0, 0));
+}
+
+.box.o::before {
+    position: absolute;
+    content: url(goth/bat.png);
+    -webkit-filter: drop-shadow(0px 5px 5px rgb(0, 0, 0));
+    filter: drop-shadow(0px 8px 10px rgb(0, 0, 0));
+    width: 85px;
+    height: auto;
+    padding-left: 3px;
+}
+
+
+.knop {
+    margin-top: 5px;
+    position: relative;
+    font-size: 0.8rem;
+    font-family: 'New Rocker';
+    color:  rgb(141, 194, 240);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 3px solid rgb(0, 0, 0);
+    border-left: 3px solid rgb(0, 0, 0);
+    border-top: 2px solid rgb(55, 90, 129);
+    border-right: 2px solid rgb(116, 163, 216);
+    box-shadow: 0px 0px 18px rgb(0, 0, 0);
+    background-image: url(goth/bgbottom.jpg);
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+}
+
+.overLay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 20, 39, 0.5);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.win {
+    font-size: 4rem;
+    color: white;
+    font-family: 'New Rocker';
+    text-shadow: 0px -2px 0px rgb(85, 134, 190), /* 50% white from top */
+                    0px 5px 10px rgb(0, 0, 0);
+}
+
+.newGame {
+    width: 18rem;
+    height: 2.4rem;;
+    font-size: 1rem;
+    color: rgb(138, 191, 226);
+    background-color: rgb(7, 17, 32);
+    border-style: none;
+    border: 1px solid rgb(138, 191, 226);
+    box-shadow: 0px 0px 18px rgb(0, 0, 0);
+}
+
+.phrase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 119px;
+    height: 30px;
+    padding-left: 30px;
+}
+
+.pic {
+    content: url(goth/unmute.png);
+    width: 20px;
+    cursor: pointer;
+}
+
+.pic2 {
+    content: url(goth/mute.png);
+    width: 20px;
+    cursor: pointer;
+}
+
